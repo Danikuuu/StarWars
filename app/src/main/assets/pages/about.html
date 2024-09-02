@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    img {
+        width: 70%;
+        margin-bottom: 60px;
+    }
+    h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+    h3, h5 {
+        color: white;
+        font-family: Julius Sans One;
+    }
+    h5 {
+        font-size: 20px;
+        text-align: center;
+        font-weight: 400;
+        letter-spacing: 5px;
+    }
+    .contents {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .fiied-button {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Additional styling */
+        background: none;
+        padding: 10px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+    }
+
+    .fiied-button a {
+        color: white;
+        font-family: Julius Sans One;
+        text-decoration: none;
+    }
+</style>
+<body>
+<div class="head">
+    <center><img src="../images/star-wars-wide 1.png" alt=""></center>
+</div>
+<div class="contents">
+    <h3>A long time ago, in a galaxy far, far away....</h3>
+    <h5>It is a period of civil war.
+        Rebel spaceships, striking
+        from a hidden base, have won
+        their first victory against
+        the evil Galactic Empire.
+        <br>
+        During the battle, Rebel
+        spies managed to steal secret
+        plans to the Empire's
+        ultimate weapon, the DEATH
+        STAR, an armored space
+        station with enough power to
+        destroy an entire planet.
+        <br>
+        Pursued by the Empire's
+        sinister agents, Princess
+        Leia races home aboard her
+        starship, custodian of the
+        stolen plan that can save
+        her people and restore
+        freedom to the galaxy...</h5>
+</div>
+<div class="fiied-button" style="background-color: black;">
+    <a href="" style="text-decoration: underline;">About</a>
+    <a href="./gallery.html">Gallery</a>
+    <a href="./info.html">Info Page</a>
+</div>
+<script>
+        const textElement = document.querySelector('h5');
+        const text = textElement.innerText;
+        textElement.innerText = '';
+
+        let index = 0;
+
+        function animateText() {
+        textElement.textContent += text[index];
+        index++;
+
+        if (index < text.length) {
+            setTimeout(animateText, 30); // Adjust the delay (in milliseconds) between each letter
+        }
+        }
+
+        animateText();
+    </script>
+</body>
+</html>

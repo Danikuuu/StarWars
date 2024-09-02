@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" >
+<!-- Code by Keyframe Effects -->
+<head>
+	<meta charset="UTF-8">
+	<title>3D Card Hover Effect Using HTML CSS Only</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+	* {
+	box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+.main {
+	width: 100%;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	width: 300px;
+	height: 455px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 36px;
+	perspective: 2500px;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.cover-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.wrapper {
+	transition: all 0.5s;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	background: #000;
+	border-radius: 30px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.wrapper img {
+	border-radius: 30px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card:hover .wrapper {
+	transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+	box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+	content: "";
+	opacity: 0;
+	width: 100%;
+	height: 80px;
+	transition: all 0.5s;
+	border-radius: 30px;
+	position: absolute;
+	left: 0;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.wrapper::before {
+	top: 0;
+	height: 100%;
+	background-image: linear-gradient(to top,transparent 46%,rgba(12, 13, 19, 0.5) 68%,rgba(12, 13, 19) 97%);
+}
+
+.wrapper::after {
+	bottom: 0;
+	opacity: 1;
+	background-image: linear-gradient(to bottom,transparent 46%,rgba(12, 13, 19, 0.5) 68%,rgba(12, 13, 19) 97%);
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+	opacity: 1;
+}
+
+.card:hover .wrapper::after {
+	height: 120px;
+}
+
+.logo {
+	width: 100%;
+	transition: transform 0.5s;
+	position: absolute;
+    bottom: 10px;
+}
+
+.card:hover .logo {
+	transform: translate3d(0%, -50px, 100px);
+}
+
+.card:hover .cover-image {
+    opacity: 0.3;
+}
+
+.character {
+	width: 100%;
+	opacity: 0;
+	transition: all 0.5s;
+	filter: drop-shadow(2px 2px 2px #000);
+	position: absolute;
+	z-index: -1;
+}
+
+.card:hover .character {
+	opacity: 1;
+	transform: translate3d(5%, -20%, 670px);
+}
+.main .card a {
+    margin-top: -290px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+    .fiied-button {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Additional styling */
+        background: none;
+        padding: 10px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+    }
+    
+</style>
+<body>
+    <div class="main">
+        <div class="card">
+            <!-- Cover image Code -->
+            <div class="wrapper">
+              <img src="../images/download (2).jpg" class="cover-image" />
+            </div>
+            
+            <!-- Logo Code -->
+            <img src="../images/star-wars-wide 1.png" class="logo" />
+            
+            <!-- Character image Code -->
+            <a href="" class="character"><img src="../images/Star-Wars-Darth-Vader-PNG-Transparent-Image.png" class="character" /></a>
+        </div>
+        <div class="card">
+            <!-- Cover image Code -->
+            <div class="wrapper">
+              <img src="../images/yoda-star-wars-battelfront-2-8k-5r-1280x720.jpeg" class="cover-image" />
+            </div>
+            
+            <!-- Logo Code -->
+            <img src="../images/star-wars-wide 1.png" class="logo" />
+            
+            <!-- Character image Code -->
+            <a href="#" class="character"><img src="../images/Master-Yoda-PNG-Photo.png" class="character" style="margin-top: -20px;"/></a>
+        </div>
+        <div class="card">
+            <!-- Cover image Code -->
+            <div class="wrapper">
+              <img src="../images/images.jpg" class="cover-image" />
+            </div>
+            
+            <!-- Logo Code -->
+            <img src="../images/star-wars-wide 1.png" class="logo" />
+            
+            <!-- Character image Code -->
+            <a href="#" class="character"><img src="../images/storm.png" class="character" style="margin-left: -50px;" /></a>
+        </div>
+        <div class="card">
+            <!-- Cover image Code -->
+            <div class="wrapper">
+              <img src="../images/Disney-Considering-Luke-Skywalker-TV-Series-01.jpg" class="cover-image" />
+            </div>
+            
+            <!-- Logo Code -->
+            <img src="../images/star-wars-wide 1.png" class="logo" />
+            
+            <!-- Character image Code -->
+            <a href="#" class="character"><img src="../images/pngfind.com-luke-skywalker-png-1743965.png" class="character" /></a>
+        </div>
+    </div>
+</body>
+</html>

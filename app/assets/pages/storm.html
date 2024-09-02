@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    img {
+        width: 70%;
+        margin-bottom: 60px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    h3, h5 {
+        color: white;
+        font-family: Julius Sans One;
+    }
+    h5 {
+        font-size: 20px;
+        text-align: center;
+        font-weight: 400;
+        letter-spacing: 5px;
+    }
+    .contents {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px   ;
+    }
+    .fiied-button {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Additional styling */
+        background: none;
+        padding: 10px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+    }
+
+    .fiied-button a {
+        color: white;
+        font-family: Julius Sans One;
+        text-decoration: none;
+    }
+    .contents{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .picture{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+</style>
+<body>
+    <div class="head">
+        <center><img src="../images/star-wars-wide 1.png" alt=""></center>
+    </div>
+    <div class="contents">
+        <div class="picture">
+          <img src="../images/storm.png" alt="">
+          <h3>StormTrooper</h3>
+        <h5>Imperial stormtroopers, also known simply as stormtroopers, were the elite soldiers of the Galactic Empire and many of its successor states. Like Imperial-class Star Destroyers and TIE fighters, stormtroopers served as ever-present reminders of the absolute power of Emperor Palpatine and would remain an icon of Imperial war efforts for over a century following his death. These faceless enforcers of the New Order were considered an extension of the Emperor's will, and often used efficient yet brutal tactics to keep thousands of star systems throughout the galaxy in submission to the Empire. At the height of the Empire, stormtroopers had effectively become symbols of major authority. With few exceptions, they were distinguished from all other military units by their signature white armor.</h5>
+          
+        </div>
+    </div>
+    <div class="fiied-button" style="background-color: black;">
+        <a href="./about.html">About</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./info.html">Info Page</a>
+    </div>
+    <script>
+        const textElement = document.querySelector('h5');
+        const text = textElement.innerText;
+        textElement.innerText = '';
+
+        let index = 0;
+
+        function animateText() {
+        textElement.textContent += text[index];
+        index++;
+
+        if (index < text.length) {
+            setTimeout(animateText, 30); // Adjust the delay (in milliseconds) between each letter
+        }
+        }
+
+        animateText();
+    </script>
+</body>
+</html>
